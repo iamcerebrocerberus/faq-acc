@@ -54,7 +54,11 @@
 
 footer{
     font-size: .5rem;
+    @include respond-to('small'){
+        display: none;
+    }
     @include respond-to('large'){
+        display: block;
         font-size: .6rem;
     }
     a{
