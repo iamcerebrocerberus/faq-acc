@@ -1,0 +1,131 @@
+@use 'abstracts' as *;
+@use 'utilities' as *;
+@use 'keyframes' as *;
+
+body{
+    @include dis-flex-cen("column");
+    @include animate-bg;
+    padding: 12rem 0 5rem;
+    @include respond-to('large'){
+        padding: 0;
+    }
+    position: relative;
+}
+
+main{
+    position: relative;
+}
+.main-container{
+    margin: 0 .4rem 0;
+    border-radius: 1.3rem;
+    width: pxCon(264,rem);
+    @include respond-to('small'){
+        width: pxCon(360,rem);
+    }
+    @include respond-to('large'){
+        @include dis-flex-cen("row");
+        width: pxCon(870,rem);
+        height: pxCon(500,rem);
+        overflow: hidden;
+    }
+}
+
+img[src*=mobile]{
+    margin-top: -6.3rem;
+    width: 14rem;
+    z-index: 1000;
+    @include respond-to('small'){
+        width: 19rem;
+        margin-top: -8.4rem;
+    }
+}
+
+img[src*=box]{
+    @include respond-to('large'){
+        position: absolute;
+        top: 15rem;
+        left: -7.2rem;
+    }
+    animation: slide-in-out .9s ease-in-out alternate infinite;
+}
+
+.o-faq-img{
+    position: relative;
+    @include dis-flex-cen("row");
+    
+    &::before{
+        content: url("../../assets/bg-pattern-mobile.svg");
+        position: absolute;
+        top: -.5rem;
+        transform: scale(.92);
+        @include respond-to('small'){
+            transform: scale(1.2);
+            top: 1rem;
+        }
+        @include respond-to('large'){
+            content: url("../../assets/bg-pattern-desktop.svg");
+            transform: scale(1);
+            top: -24rem;
+            left: -37rem;
+        }
+        
+    }
+    @include respond-to('large'){
+        animation: img-slide-in 700ms;
+        img{
+            margin-left: -5.4rem;
+            z-index: 100;
+        }
+    }
+}
+
+.o-faq{
+    padding: 3.5rem 1rem 2rem;
+    
+    
+    @include respond-to('large'){
+       padding: 3rem;
+       width: 50%;
+       margin-left: auto;
+       height: 100%;
+       overflow-y: scroll;
+       scrollbar-width: none;
+       animation: faq-slide-in 700ms;
+    }
+    &__head{
+        @extend .u-txt-cen;
+        margin-bottom: 1rem;
+        @include respond-to('large'){
+            text-align: left;
+            margin-top: 1.5rem;
+        }
+    }
+}
+
+.o-modal{
+    padding: .6rem;
+    @include respond-to('large'){
+        padding: 1rem 0 .5rem 0;
+    }
+
+    &__head{
+        position: relative;
+        padding:0 1rem .5rem 0;
+        @include respond-to('large'){
+            padding-right: 3rem;
+        }
+    }
+    &__txt{
+        padding-right: .89rem;
+        @include respond-to('small'){
+            padding-right: 1rem;
+        }
+    }
+}
+
+footer{
+    transform: translateY(3rem);
+    padding: 0 2rem 0;
+    @extend .u-txt-cen;
+}
+

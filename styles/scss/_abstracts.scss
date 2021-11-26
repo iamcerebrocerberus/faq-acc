@@ -1,0 +1,85 @@
+@use 'sass:map';
+@use 'sass:math';
+
+$breakpoints: (
+    'small': '25em',//375px
+    'large': '66.66666em'//1000px
+);
+
+//colors
+$colors: (
+    'primary': (
+        'faq-head':hsl(238, 29%, 16%),//very desaturated blue
+        'acc-head-hov':hsl(14, 88%, 65%),//soft read
+        'grad-top':hsl(273, 75%, 66%),//soft violet
+        'grad-bottom':hsl(240, 73%, 65%),//soft blue
+    ),
+
+    'neutral': (
+        'acc-head':hsl(137, 12%, 33%), //very dark grayish blue
+        'acc-txt':hsl(240, 6%, 50%), //dark grayish blue
+        'divider': hsl(240, 5%, 91%),
+        'footer-cl':hsl(240, 5%, 91%)
+    )
+);
+
+//||=== MIXINS =====||
+//color getter
+@mixin get-prop-color($prop,$key,$val){
+    $col: map.get($colors,$key,$val);
+    #{$prop}: $col;
+}
+
+//body gradient 
+@mixin lin-body-gra($key,$col1,$col2){
+    $col1: map.get($colors,$key,$col1);
+    $col2: map.get($colors,$key,$col2);
+    background: linear-gradient(45deg,$col1,$col2);
+    background: -moz-linear-gradient(45deg,$col1,$col2);
+    background: -o-linear-gradient(45deg,$col1,$col2);
+    background: -webkit-linear-gradient(45deg,$col1,$col2);
+} 
+
+
+//media query
+@mixin respond-to($val){
+    $val: map.get($breakpoints,$val);
+    @media screen and (min-width: $val){
+        @content;
+    }
+}
+
+//flex center all
+@mixin dis-flex-cen($dir){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: #{$dir};
+}
+
+//background animation mixin
+@mixin animate-bg(){
+    animation: body-bg-gradient 25s infinite alternate;
+    -moz-animation: body-bg-gradient 25s infinite alternate;
+    -o-animation: body-bg-gradient 25s infinite alternate;
+    -webkit-animation: body-bg-gradient 25s infinite alternate;
+    background-size: 400%;
+}
+
+
+//||==== FUNCTIONS ====||
+//rem and em convertor
+@function pxCon($value,$unit){
+    $rem : "rem";
+    $em : "em";
+    $value: math.div($value,15); // 1em or rem == 15px
+    @if $value and ($unit == $rem){
+        @return #{$value}rem;
+    }@else if $value and ($unit == $em){
+        @return #{$value}em;
+    }@else {
+        @error "first arg must be only value(px) and second arg must be unit ['rem' or 'em']";
+    }
+}
+
+

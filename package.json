@@ -1,0 +1,14 @@
+{
+  "name": "solution",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile-pug": "pug -w pug/index.pug -o ./ -P",
+    "compile-sass": "sass --watch styles/scss/main.scss styles/css/main.css",
+    "compile-comp-sass": "sass --watch --style=compressed styles/scss/main.scss styles/css/main.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

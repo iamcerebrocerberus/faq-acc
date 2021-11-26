@@ -1,0 +1,60 @@
+@use "abstracts" as *;
+@use "sass:map";
+
+.main-container{
+    background: white;
+}
+
+.c-faq__head{
+    text-transform: uppercase;
+    font-size: 2rem;
+    @include respond-to('small'){
+        font-size: 2.5rem;
+    }
+}
+
+
+.c-faq-acc-item{
+    border-bottom: 1px solid map.get($colors,"neutral","divider");
+    &[open] summary{
+        font-weight: 900;
+        color: black;
+        &::after{
+            transform: rotate(180deg);
+        }
+    }
+    &__head{
+        font-size: .83rem;
+        @include respond-to('small'){
+            font-size: .9rem;
+        }
+        @include get-prop-color(color,'neutral','acc-head');
+        &:hover{
+            cursor: pointer;
+            @include get-prop-color('color','primary','acc-head-hov');
+        }
+        
+        &::after{
+            content: url("../../assets/icon-arrow-down.svg");
+            position: absolute;
+            top: 0;
+            right: 0;
+            transition: all 290ms;
+        }
+    }
+    &__txt{
+        font-size: .76rem;
+        @include get-prop-color(color,'neutral','acc-txt');
+        @include respond-to('small'){
+            font-size: .9rem;
+        }
+    }
+}
+
+
+footer{
+    font-size: .8rem;
+    a{
+        @include get-prop-color(color,'neutral','footer-cl');
+    }
+}
