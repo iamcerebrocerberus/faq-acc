@@ -28,6 +28,7 @@ body{
     @include lin-body-gra("primary","grad-top","grad-bottom");
 }
 
+
 img{
     display: block;
 }
@@ -54,7 +55,7 @@ img[src*=desktop]{
 
 
 // reduce motion query 
-@media (prefers-reduced-motion: reduced){
+@media screen and (prefers-reduced-motion){
     *,*::before,*::after{
         animation-delay: -1ms !important;
         animation-duration: 1ms !important;

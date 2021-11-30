@@ -33,6 +33,9 @@
             cursor: pointer;
             @include get-prop-color('color','primary','acc-head-hov');
         }
+        &:focus{
+            @include get-prop-color('color','primary','acc-head-hov');
+        }
         
         &::after{
             content: url("../../assets/icon-arrow-down.svg");
