@@ -68,81 +68,6 @@ img[src*=desktop] {
     transition-delay: 0s !important;
   }
 }
-.main-container {
-  background: white;
-}
-
-.c-faq__head {
-  text-transform: uppercase;
-  font-size: 2rem;
-}
-@media screen and (min-width: 25em) {
-  .c-faq__head {
-    font-size: 2.5rem;
-  }
-}
-
-.c-faq-acc-item {
-  border-bottom: 1px solid #e7e7e9;
-}
-.c-faq-acc-item[open] summary {
-  font-weight: 900;
-  color: black;
-}
-.c-faq-acc-item[open] summary::after {
-  transform: rotate(180deg);
-}
-.c-faq-acc-item__head {
-  font-size: 0.83rem;
-  color: #4a5e50;
-}
-@media screen and (min-width: 25em) {
-  .c-faq-acc-item__head {
-    font-size: 0.9rem;
-  }
-}
-.c-faq-acc-item__head:hover {
-  cursor: pointer;
-  color: #f47c57;
-}
-.c-faq-acc-item__head:focus {
-  color: #f47c57;
-}
-.c-faq-acc-item__head::after {
-  content: url("../../assets/icon-arrow-down.svg");
-  position: absolute;
-  top: 0;
-  right: 0;
-  transition: all 290ms;
-}
-.c-faq-acc-item__txt {
-  font-size: 0.76rem;
-  color: #787887;
-}
-@media screen and (min-width: 25em) {
-  .c-faq-acc-item__txt {
-    font-size: 0.9rem;
-  }
-}
-
-footer {
-  font-size: 0.5rem;
-}
-@media screen and (min-width: 25em) {
-  footer {
-    display: none;
-  }
-}
-@media screen and (min-width: 66.66666em) {
-  footer {
-    display: block;
-    font-size: 0.6rem;
-  }
-}
-footer a {
-  color: #e7e7e9;
-}
-
 @keyframes body-bg-gradient {
   0% {
     background-position: 0% 50%;
@@ -487,6 +412,81 @@ img[src*=box] {
 footer {
   transform: translateY(3rem);
   padding: 0 2rem 0;
+}
+
+.main-container {
+  background: white;
+}
+
+.c-faq__head {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+@media screen and (min-width: 25em) {
+  .c-faq__head {
+    font-size: 2.5rem;
+  }
+}
+
+.c-faq-acc-item {
+  border-bottom: 1px solid #e7e7e9;
+}
+.c-faq-acc-item[open] summary {
+  font-weight: 900;
+  color: black;
+}
+.c-faq-acc-item[open] summary::after {
+  transform: rotate(180deg);
+}
+.c-faq-acc-item__head {
+  font-size: 0.83rem;
+  color: #4a5e50;
+}
+@media screen and (min-width: 25em) {
+  .c-faq-acc-item__head {
+    font-size: 0.9rem;
+  }
+}
+.c-faq-acc-item__head:hover {
+  cursor: pointer;
+  color: #f47c57;
+}
+.c-faq-acc-item__head:focus {
+  color: #f47c57;
+}
+.c-faq-acc-item__head::after {
+  content: url("../../assets/icon-arrow-down.svg");
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 290ms;
+}
+.c-faq-acc-item__txt {
+  font-size: 0.76rem;
+  color: #787887;
+}
+@media screen and (min-width: 25em) {
+  .c-faq-acc-item__txt {
+    font-size: 0.9rem;
+  }
+}
+
+footer {
+  font-size: 0.5rem;
+}
+@media screen and (min-width: 25em) {
+  footer {
+    display: none;
+  }
+}
+@media screen and (min-width: 66.66666em) {
+  footer {
+    display: block;
+    font-size: 0.6rem;
+  }
+}
+footer a {
+  color: #e7e7e9;
 }
 
 /*# sourceMappingURL=main.css.map */
