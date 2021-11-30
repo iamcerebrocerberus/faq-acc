@@ -372,6 +372,9 @@ img[src*=box] {
     scrollbar-width: none;
     animation: faq-slide-in 700ms;
   }
+  .o-faq::-webkit-scrollbar {
+    display: none;
+  }
 }
 .o-faq__head {
   margin-bottom: 1rem;

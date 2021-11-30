@@ -91,6 +91,9 @@ img[src*=box]{
        overflow-y: scroll;
        scrollbar-width: none;
        animation: faq-slide-in 700ms;
+       &::-webkit-scrollbar{
+           display: none;
+       }
     }
     &__head{
         @extend .u-txt-cen;
